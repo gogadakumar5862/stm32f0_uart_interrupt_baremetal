@@ -21,6 +21,11 @@ static void uart_set_baudrate(USART_TypeDef *USARTx, uint32_t periphClk, uint32_
 static uint16_t compute_uart_bd(uint32_t periphClk, uint32_t baud);
 
 
+// ================================================================
+ void uart2_tx_init(void);  //  -----> use only for polling method
+// ===================================================================
+
+
 void uart2_write(int ch);
 
 void uart2_rxtx_interrupt_init(void)
@@ -103,3 +108,38 @@ static uint16_t compute_uart_bd(uint32_t periphClk, uint32_t baud)
 	return (periphClk + (baud / 2U)) / baud;
 }
 
+//===================================================================================================================================================================================================================
+//   Use the uart2_tx_init only when polling method is used 
+void uart2_tx_init(void)
+{
+	/*********Configure uart gpio pin ******/
+	/* Enable clock access to gpioa */
+
+	RCC->AHBENR |= RCC_AHBENR_GPIOAEN;
+
+	/* Set PA2 mode to alternate function mode */
+		GPIOA->MODER &=~(1U<<4);
+		GPIOA->MODER |= (1U<<5);
+
+	/* Set PA2 alternate function type to UART_TX (AF1) */
+		GPIOA->AFR[0] |= (1U<<8);
+		GPIOA->AFR[0] &=~(1U<<9);
+		GPIOA->AFR[0] &=~(1U<<10);
+		GPIOA->AFR[0] &=~(1U<<11);
+
+	/****** Configure UART module ********/
+		/* Enable clock access to uart2 */
+		RCC->APB1ENR |= UART2EN;
+
+	/* Configure baudrate  */
+		uart_set_baudrate(USART2,APB1_CLK,UART_BAUDRATE);
+
+	/* Configure uart transfer direction  */
+		USART2->CR1 = CR1_TE;
+
+	/* Enable UART module */
+		USART2->CR1 |= CR1_UE;
+
+}
+
+// ===========================================================================================================================================

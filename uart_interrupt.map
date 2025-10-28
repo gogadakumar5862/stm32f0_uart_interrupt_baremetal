@@ -41,7 +41,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
 LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a
 LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libnosys.a
 
-.text           0x0000000008000000      0x4a0
+.text           0x0000000008000000      0x560
  *(.isr_vector)
  .isr_vector    0x0000000008000000       0xc0 startup_stm32f051r8t6.o
                 0x0000000008000000                g_pfnVectors
@@ -49,78 +49,79 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  .text          0x00000000080000c0       0x40 src/main.o
                 0x00000000080000c0                main
                 0x00000000080000ca                USART2_IRQHandler
- .text          0x0000000008000100      0x224 uart.o
+ .text          0x0000000008000100      0x2e4 uart.o
                 0x0000000008000134                uart2_rxtx_interrupt_init
                 0x0000000008000274                uart2_read
                 0x0000000008000298                uart2_write
- .text          0x0000000008000324       0x64 startup_stm32f051r8t6.o
-                0x0000000008000324                Reset_Handler
-                0x0000000008000380                DMA1_CH4_5_6_7_DMA2_CH3_4_5_IRQHandler
-                0x0000000008000380                TIM1_CC_IRQHandler
-                0x0000000008000380                TSC_IRQHandler
-                0x0000000008000380                HardFault_Handler
-                0x0000000008000380                SysTick_Handler
-                0x0000000008000380                PVD_IRQHandler
-                0x0000000008000380                PendSV_Handler
-                0x0000000008000380                NMI_Handler
-                0x0000000008000380                I2C1_IRQHandler
-                0x0000000008000380                RCC_CRS_IRQHandler
-                0x0000000008000380                SPI1_IRQHandler
-                0x0000000008000380                TIM6_DAC_IRQHandler
-                0x0000000008000380                EXTI2_3_IRQHandler
-                0x0000000008000380                I2C2_IRQHandler
-                0x0000000008000380                TIM17_IRQHandler
-                0x0000000008000380                CEC_CAN_IRQHandler
-                0x0000000008000380                RTC_IRQHandler
-                0x0000000008000380                TIM16_IRQHandler
-                0x0000000008000380                TIM3_IRQHandler
-                0x0000000008000380                EXTI4_15_IRQHandler
-                0x0000000008000380                Default_Handler
-                0x0000000008000380                DMA1_CH2_3_DMA2_CH1_2_IRQHandler
-                0x0000000008000380                TIM14_IRQHandler
-                0x0000000008000380                TIM7_IRQHandler
-                0x0000000008000380                TIM15_IRQHandler
-                0x0000000008000380                EXTI0_1_IRQHandler
-                0x0000000008000380                USB_IRQHandler
-                0x0000000008000380                SPI2_IRQHandler
-                0x0000000008000380                DMA1_CH1_IRQHandler
-                0x0000000008000380                SVC_Handler
-                0x0000000008000380                WWDG_IRQHandler
-                0x0000000008000380                TIM2_IRQHandler
-                0x0000000008000380                ADC_COMP_IRQHandler
-                0x0000000008000380                USART3_4_5_6_7_8_IRQHandler
-                0x0000000008000380                FLASH_IRQHandler
-                0x0000000008000380                USART1_IRQHandler
-                0x0000000008000380                TIM1_BRK_UP_TRG_COM_IRQHandler
- .text          0x0000000008000388      0x114 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
-                0x0000000008000388                __udivsi3
-                0x0000000008000388                __aeabi_uidiv
-                0x0000000008000494                __aeabi_uidivmod
- .text          0x000000000800049c        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
-                0x000000000800049c                __aeabi_ldiv0
-                0x000000000800049c                __aeabi_idiv0
+                0x0000000008000322                uart2_tx_init
+ .text          0x00000000080003e4       0x64 startup_stm32f051r8t6.o
+                0x00000000080003e4                Reset_Handler
+                0x0000000008000440                DMA1_CH4_5_6_7_DMA2_CH3_4_5_IRQHandler
+                0x0000000008000440                TIM1_CC_IRQHandler
+                0x0000000008000440                TSC_IRQHandler
+                0x0000000008000440                HardFault_Handler
+                0x0000000008000440                SysTick_Handler
+                0x0000000008000440                PVD_IRQHandler
+                0x0000000008000440                PendSV_Handler
+                0x0000000008000440                NMI_Handler
+                0x0000000008000440                I2C1_IRQHandler
+                0x0000000008000440                RCC_CRS_IRQHandler
+                0x0000000008000440                SPI1_IRQHandler
+                0x0000000008000440                TIM6_DAC_IRQHandler
+                0x0000000008000440                EXTI2_3_IRQHandler
+                0x0000000008000440                I2C2_IRQHandler
+                0x0000000008000440                TIM17_IRQHandler
+                0x0000000008000440                CEC_CAN_IRQHandler
+                0x0000000008000440                RTC_IRQHandler
+                0x0000000008000440                TIM16_IRQHandler
+                0x0000000008000440                TIM3_IRQHandler
+                0x0000000008000440                EXTI4_15_IRQHandler
+                0x0000000008000440                Default_Handler
+                0x0000000008000440                DMA1_CH2_3_DMA2_CH1_2_IRQHandler
+                0x0000000008000440                TIM14_IRQHandler
+                0x0000000008000440                TIM7_IRQHandler
+                0x0000000008000440                TIM15_IRQHandler
+                0x0000000008000440                EXTI0_1_IRQHandler
+                0x0000000008000440                USB_IRQHandler
+                0x0000000008000440                SPI2_IRQHandler
+                0x0000000008000440                DMA1_CH1_IRQHandler
+                0x0000000008000440                SVC_Handler
+                0x0000000008000440                WWDG_IRQHandler
+                0x0000000008000440                TIM2_IRQHandler
+                0x0000000008000440                ADC_COMP_IRQHandler
+                0x0000000008000440                USART3_4_5_6_7_8_IRQHandler
+                0x0000000008000440                FLASH_IRQHandler
+                0x0000000008000440                USART1_IRQHandler
+                0x0000000008000440                TIM1_BRK_UP_TRG_COM_IRQHandler
+ .text          0x0000000008000448      0x114 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+                0x0000000008000448                __udivsi3
+                0x0000000008000448                __aeabi_uidiv
+                0x0000000008000554                __aeabi_uidivmod
+ .text          0x000000000800055c        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+                0x000000000800055c                __aeabi_ldiv0
+                0x000000000800055c                __aeabi_idiv0
  *(.rodata*)
-                0x00000000080004a0                _etext = .
+                0x0000000008000560                _etext = .
 
-.glue_7         0x00000000080004a0        0x0
- .glue_7        0x00000000080004a0        0x0 linker stubs
+.glue_7         0x0000000008000560        0x0
+ .glue_7        0x0000000008000560        0x0 linker stubs
 
-.glue_7t        0x00000000080004a0        0x0
- .glue_7t       0x00000000080004a0        0x0 linker stubs
+.glue_7t        0x0000000008000560        0x0
+ .glue_7t       0x0000000008000560        0x0 linker stubs
 
-.vfp11_veneer   0x00000000080004a0        0x0
- .vfp11_veneer  0x00000000080004a0        0x0 linker stubs
+.vfp11_veneer   0x0000000008000560        0x0
+ .vfp11_veneer  0x0000000008000560        0x0 linker stubs
 
-.v4_bx          0x00000000080004a0        0x0
- .v4_bx         0x00000000080004a0        0x0 linker stubs
+.v4_bx          0x0000000008000560        0x0
+ .v4_bx         0x0000000008000560        0x0 linker stubs
 
-.iplt           0x00000000080004a0        0x0
- .iplt          0x00000000080004a0        0x0 src/main.o
+.iplt           0x0000000008000560        0x0
+ .iplt          0x0000000008000560        0x0 src/main.o
 
-.rel.dyn        0x00000000080004a0        0x0
- .rel.iplt      0x00000000080004a0        0x0 src/main.o
+.rel.dyn        0x0000000008000560        0x0
+ .rel.iplt      0x0000000008000560        0x0 src/main.o
 
-.data           0x0000000020000000        0x0 load address 0x00000000080004a0
+.data           0x0000000020000000        0x0 load address 0x0000000008000560
                 0x0000000020000000                _sdata = .
  *(.data*)
                 0x0000000020000000                _edata = .
