@@ -1,0 +1,188 @@
+Archive member included to satisfy reference by file (symbol)
+
+/usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+                              uart.o (__aeabi_uidiv)
+/usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+                              /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+
+Discarded input sections
+
+ .data          0x0000000000000000        0x0 src/main.o
+ .data          0x0000000000000000        0x0 uart.o
+ .bss           0x0000000000000000        0x0 uart.o
+ .data          0x0000000000000000        0x0 startup_stm32f051r8t6.o
+ .bss           0x0000000000000000        0x0 startup_stm32f051r8t6.o
+ .text          0x0000000000000000       0xf8 Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/system_stm32f0xx.o
+ .data          0x0000000000000000        0x4 Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/system_stm32f0xx.o
+ .bss           0x0000000000000000        0x0 Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/system_stm32f0xx.o
+ .rodata        0x0000000000000000       0x18 Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/system_stm32f0xx.o
+ .comment       0x0000000000000000       0x34 Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/system_stm32f0xx.o
+ .ARM.attributes
+                0x0000000000000000       0x2c Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/system_stm32f0xx.o
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x0000000008000000 0x0000000000010000 xr
+RAM              0x0000000020000000 0x0000000000002000 xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD src/main.o
+LOAD uart.o
+LOAD startup_stm32f051r8t6.o
+LOAD Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/system_stm32f0xx.o
+LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a
+LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a
+LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libnosys.a
+
+.text           0x0000000008000000      0x4a0
+ *(.isr_vector)
+ .isr_vector    0x0000000008000000       0xc0 startup_stm32f051r8t6.o
+                0x0000000008000000                g_pfnVectors
+ *(.text*)
+ .text          0x00000000080000c0       0x40 src/main.o
+                0x00000000080000c0                main
+                0x00000000080000ca                USART2_IRQHandler
+ .text          0x0000000008000100      0x224 uart.o
+                0x0000000008000134                uart2_rxtx_interrupt_init
+                0x0000000008000274                uart2_read
+                0x0000000008000298                uart2_write
+ .text          0x0000000008000324       0x64 startup_stm32f051r8t6.o
+                0x0000000008000324                Reset_Handler
+                0x0000000008000380                DMA1_CH4_5_6_7_DMA2_CH3_4_5_IRQHandler
+                0x0000000008000380                TIM1_CC_IRQHandler
+                0x0000000008000380                TSC_IRQHandler
+                0x0000000008000380                HardFault_Handler
+                0x0000000008000380                SysTick_Handler
+                0x0000000008000380                PVD_IRQHandler
+                0x0000000008000380                PendSV_Handler
+                0x0000000008000380                NMI_Handler
+                0x0000000008000380                I2C1_IRQHandler
+                0x0000000008000380                RCC_CRS_IRQHandler
+                0x0000000008000380                SPI1_IRQHandler
+                0x0000000008000380                TIM6_DAC_IRQHandler
+                0x0000000008000380                EXTI2_3_IRQHandler
+                0x0000000008000380                I2C2_IRQHandler
+                0x0000000008000380                TIM17_IRQHandler
+                0x0000000008000380                CEC_CAN_IRQHandler
+                0x0000000008000380                RTC_IRQHandler
+                0x0000000008000380                TIM16_IRQHandler
+                0x0000000008000380                TIM3_IRQHandler
+                0x0000000008000380                EXTI4_15_IRQHandler
+                0x0000000008000380                Default_Handler
+                0x0000000008000380                DMA1_CH2_3_DMA2_CH1_2_IRQHandler
+                0x0000000008000380                TIM14_IRQHandler
+                0x0000000008000380                TIM7_IRQHandler
+                0x0000000008000380                TIM15_IRQHandler
+                0x0000000008000380                EXTI0_1_IRQHandler
+                0x0000000008000380                USB_IRQHandler
+                0x0000000008000380                SPI2_IRQHandler
+                0x0000000008000380                DMA1_CH1_IRQHandler
+                0x0000000008000380                SVC_Handler
+                0x0000000008000380                WWDG_IRQHandler
+                0x0000000008000380                TIM2_IRQHandler
+                0x0000000008000380                ADC_COMP_IRQHandler
+                0x0000000008000380                USART3_4_5_6_7_8_IRQHandler
+                0x0000000008000380                FLASH_IRQHandler
+                0x0000000008000380                USART1_IRQHandler
+                0x0000000008000380                TIM1_BRK_UP_TRG_COM_IRQHandler
+ .text          0x0000000008000388      0x114 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+                0x0000000008000388                __udivsi3
+                0x0000000008000388                __aeabi_uidiv
+                0x0000000008000494                __aeabi_uidivmod
+ .text          0x000000000800049c        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+                0x000000000800049c                __aeabi_ldiv0
+                0x000000000800049c                __aeabi_idiv0
+ *(.rodata*)
+                0x00000000080004a0                _etext = .
+
+.glue_7         0x00000000080004a0        0x0
+ .glue_7        0x00000000080004a0        0x0 linker stubs
+
+.glue_7t        0x00000000080004a0        0x0
+ .glue_7t       0x00000000080004a0        0x0 linker stubs
+
+.vfp11_veneer   0x00000000080004a0        0x0
+ .vfp11_veneer  0x00000000080004a0        0x0 linker stubs
+
+.v4_bx          0x00000000080004a0        0x0
+ .v4_bx         0x00000000080004a0        0x0 linker stubs
+
+.iplt           0x00000000080004a0        0x0
+ .iplt          0x00000000080004a0        0x0 src/main.o
+
+.rel.dyn        0x00000000080004a0        0x0
+ .rel.iplt      0x00000000080004a0        0x0 src/main.o
+
+.data           0x0000000020000000        0x0 load address 0x00000000080004a0
+                0x0000000020000000                _sdata = .
+ *(.data*)
+                0x0000000020000000                _edata = .
+
+.igot.plt       0x0000000020000000        0x0
+ .igot.plt      0x0000000020000000        0x0 src/main.o
+
+.bss            0x0000000020000000        0x1
+                0x0000000020000000                _sbss = .
+ *(.bss*)
+ .bss           0x0000000020000000        0x1 src/main.o
+                0x0000000020000000                c
+ *(COMMON)
+                0x0000000020000001                _ebss = .
+
+.stack          0x0000000020000001        0x7
+                0x0000000020000008                . = ALIGN (0x8)
+ *fill*         0x0000000020000001        0x7 
+                0x0000000020002000                _estack = (ORIGIN (RAM) + LENGTH (RAM))
+OUTPUT(uart_interrupt.elf elf32-littlearm)
+LOAD linker stubs
+
+.comment        0x0000000000000000       0x33
+ .comment       0x0000000000000000       0x33 src/main.o
+                                         0x34 (size before relaxing)
+ .comment       0x0000000000000033       0x34 uart.o
+ .comment       0x0000000000000033       0x34 startup_stm32f051r8t6.o
+
+.ARM.attributes
+                0x0000000000000000       0x2c
+ .ARM.attributes
+                0x0000000000000000       0x2c src/main.o
+ .ARM.attributes
+                0x000000000000002c       0x2c uart.o
+ .ARM.attributes
+                0x0000000000000058       0x2c startup_stm32f051r8t6.o
+ .ARM.attributes
+                0x0000000000000084       0x1e /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x00000000000000a2       0x1e /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+
+.debug_frame    0x0000000000000000       0x20
+ .debug_frame   0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+
+.debug_line     0x0000000000000000       0xcc
+ .debug_line    0x0000000000000000       0x6c /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_line    0x000000000000006c       0x60 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+
+.debug_info     0x0000000000000000       0x4c
+ .debug_info    0x0000000000000000       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_info    0x0000000000000026       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+
+.debug_abbrev   0x0000000000000000       0x28
+ .debug_abbrev  0x0000000000000000       0x14 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x0000000000000014       0x14 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+
+.debug_aranges  0x0000000000000000       0x40
+ .debug_aranges
+                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_aranges
+                0x0000000000000020       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+
+.debug_str      0x0000000000000000       0xa6
+ .debug_str     0x0000000000000000       0xa6 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_str     0x00000000000000a6       0xa6 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
