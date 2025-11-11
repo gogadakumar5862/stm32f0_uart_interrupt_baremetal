@@ -15,7 +15,7 @@
 #define SYS_FREQ    8000000
 #define APB1_CLK    SYS_FREQ
 
-#define UART_BAUDRATE  9600
+#define UART_BAUDRATE  115200
 
 static void uart_set_baudrate(USART_TypeDef *USARTx, uint32_t periphClk, uint32_t baud);
 static uint16_t compute_uart_bd(uint32_t periphClk, uint32_t baud);
@@ -26,7 +26,7 @@ static uint16_t compute_uart_bd(uint32_t periphClk, uint32_t baud);
 // ===================================================================
 
 
-void uart2_write(int ch);
+void uart2_write(uint8_t ch);
 
 void uart2_rxtx_interrupt_init(void)
 {
@@ -85,7 +85,7 @@ char uart2_read(void)
     return (char)(USART2->RDR & 0xFF);    // Read data
 }
 
-void uart2_write(int ch)
+void uart2_write(uint8_t ch)
 {
 	/* Make sure transmit data register is empty */
 		while(!(USART2->ISR & SR_TXE)){}
